@@ -1,10 +1,21 @@
 ﻿@page
+@using static PokéRepo.Models.ApiModels
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@if (Model.Results != null && Model.Results.Any())
+{
+    @foreach (Result result in Model.Results)
+    {
+        <h1>@result.Name</h1>
+        <h2>@result.Url</h2>
+    }
+}
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <h1 class="text-danger">@Model.ErrorMessage</h1>
+}
+

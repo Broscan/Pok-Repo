@@ -1,19 +1,27 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using PokéRepo.Api;
+using static PokéRepo.Models.ApiModels;
 
 namespace PokéRepo.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        public List<Result>? Results { get; set; }
+        public string? ErrorMessage { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public async Task OnGet()
         {
-            _logger = logger;
-        }
+            try
+            {
+                Root result = await new ApiCaller().MakeCall("api/v2/pokemon/pikachu/");
 
-        public void OnGet()
-        {
+                Results = result.Results;
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+            }
+
 
         }
     }
