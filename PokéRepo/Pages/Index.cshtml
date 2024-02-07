@@ -1,21 +1,34 @@
 ﻿@page
+@using PokéRepo.Enums
 @using static PokéRepo.Models.ApiModels
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
+
+@if(Model.PokemonNames.Any())
+{
+    @foreach(string pokemonName in Model.PokemonNames) 
+    {
+        <a asp-page="/PokemonDetails" asp-route-pokemonname="@pokemonName">@pokemonName</a>
+        <hr />
+    }
+}
+
+
+@* 
 @if (Model.Results != null && Model.Results.Any())
 {
-    @foreach (Result result in Model.Results)
+    @foreach (Result pokemon in Model.Results)
     {
-        <h1>@result.Name</h1>
-        <h2>@result.Url</h2>
+        <h1>@pokemon.Name</h1>
+        
     }
 }
 
 @if (!string.IsNullOrEmpty(Model.ErrorMessage))
 {
     <h1 class="text-danger">@Model.ErrorMessage</h1>
-}
+} *@
 

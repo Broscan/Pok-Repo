@@ -4,7 +4,7 @@ namespace PokéRepo.Pages
 {
     public class PokemonDetailsModel : PageModel
     {
-        public void OnGet()
+        public void OnGet(string pokemonName)
         {
         }
     }
