@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokéRepo", "PokéRepo\PokéRepo.csproj", "{AE20942D-5250-447F-8653-D9892A4FD699}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE20942D-5250-447F-8653-D9892A4FD699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE20942D-5250-447F-8653-D9892A4FD699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE20942D-5250-447F-8653-D9892A4FD699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE20942D-5250-447F-8653-D9892A4FD699}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A49A234-98E0-4AE1-9C5C-B2409FD4A033}
+	EndGlobalSection
+EndGlobal
