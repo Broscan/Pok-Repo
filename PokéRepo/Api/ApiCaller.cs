@@ -14,7 +14,7 @@ namespace PokéRepo.Api
 
         }
 
-        public async Task<Root> MakeCall(string url)
+        public async Task<Pokemon> MakeCall(string url)
         {
             HttpResponseMessage reponse = await Client.GetAsync(url);
 
@@ -22,7 +22,7 @@ namespace PokéRepo.Api
             {
                 string json = await reponse.Content.ReadAsStringAsync();
 
-                Root? result = JsonConvert.DeserializeObject<Root>(json);
+                Pokemon? result = JsonConvert.DeserializeObject<Pokemon>(json);
 
                 if (result != null)
                 {
