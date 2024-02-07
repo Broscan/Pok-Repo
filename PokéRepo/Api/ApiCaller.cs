@@ -11,7 +11,7 @@ namespace PokéRepo.Api
             Client = new();
 
             // Lägg till en basadress till klienten eftersom alla calls kommer gå till den sidan
-            Client.BaseAddress = new Uri("https://pokeapi.co/");
+
         }
 
         public async Task<Root> MakeCall(string url)

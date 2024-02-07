@@ -1,26 +1,29 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PokéRepo.Api;
-using static PokéRepo.Models.ApiModels;
+using PokéRepo.Enums;
 
 namespace PokéRepo.Pages
 {
     public class IndexModel : PageModel
     {
-        public List<Result>? Results { get; set; }
-        public string? ErrorMessage { get; set; }
+        //public List<Result> Results { get; set; }
+        //public string? ErrorMessage { get; set; }
+        public List<string> PokemonNames { get; set; } = new();
+
 
         public async Task OnGet()
         {
-            try
-            {
-                Root result = await new ApiCaller().MakeCall("api/v2/pokemon/pikachu/");
+            PokemonNames = Enum.GetNames(typeof(Pokemons)).ToList();
 
-                Results = result.Results;
-            }
-            catch (Exception ex)
-            {
-                ErrorMessage = ex.Message;
-            }
+            //try
+            //{
+            //    Root result = await new ApiCaller().MakeCall("https://pokeapi.co/api/v2/pokemon/");
+
+            //    Results = result.Results;
+            //}
+            //catch (Exception ex)
+            //{
+            //    ErrorMessage = ex.Message;
+            //}
 
 
         }
